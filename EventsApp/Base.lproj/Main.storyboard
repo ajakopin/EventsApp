@@ -241,7 +241,7 @@
                     <navigationItem key="navigationItem" id="4Yg-Hx-Kkp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cyL-Mr-3aY">
                             <connections>
-                                <segue destination="dwz-Qh-oZI" kind="presentation" id="81M-Ta-Up8"/>
+                                <segue destination="Exo-tf-2aE" kind="presentation" id="81M-Ta-Up8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -328,15 +328,27 @@
                             <constraint firstAttribute="trailingMargin" secondItem="P91-rt-AfJ" secondAttribute="trailing" constant="-16" id="mBi-OF-cyL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="h0g-nx-U6T">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mKu-ps-7aZ">
+                            <connections>
+                                <action selector="onCancelButtonTapped:" destination="dwz-Qh-oZI" id="ptU-eg-aVE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rjK-uM-yQO">
+                            <connections>
+                                <action selector="onDoneButtonTapped:" destination="dwz-Qh-oZI" id="lwf-Ke-11V"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="detailsTextField" destination="00G-zh-Jek" id="00a-4D-vJ4"/>
+                        <outlet property="detailsTextField" destination="XGt-VH-mdV" id="1Oc-CV-ST4"/>
                         <outlet property="locationTextField" destination="me1-1O-9tg" id="FxT-f2-FOm"/>
                         <outlet property="titleTextField" destination="GvL-vg-qO0" id="scB-Ze-PCb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9P8-mn-dv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1479" y="1071"/>
+            <point key="canvasLocation" x="2291" y="1071"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0D9-iF-pMO">
@@ -355,6 +367,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAz-8Q-z84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-71" y="1077"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yj4-dC-3RN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Exo-tf-2aE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AcF-Ur-CPn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dwz-Qh-oZI" kind="relationship" relationship="rootViewController" id="T2B-IC-fed"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rYX-mg-Szg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1479" y="1071"/>
         </scene>
     </scenes>
 </document>

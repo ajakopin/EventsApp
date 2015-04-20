@@ -11,11 +11,11 @@ import UIKit
 class CreateEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet var detailsTextField: UIView!
+    @IBOutlet weak var detailsTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     
     let imagePicker = UIImagePickerController()
-    var selectedImage = UIImage()
+    var selectedImage = UIImage?()
     
     
     override func viewDidLoad() {
@@ -29,6 +29,17 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         imagePicker.allowsEditing = true
         
+    }
+    
+    @IBAction func onDoneButtonTapped(sender: UIBarButtonItem) {
+        if titleTextField.text == "" || detailsTextField.text == "" || locationTextField.text == "" || selectedImage == nil
+        {
+            
+        }
+    }
+    
+    @IBAction func onCancelButtonTapped(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func onSelectPhotoButtonTapped(sender: UIButton) {
