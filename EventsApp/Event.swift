@@ -27,6 +27,7 @@ class Event: PFObject, PFSubclassing
     ///The profile of the user who created the event
     @NSManaged var host : Profile!
     ///The Parse location object of where the event is taking place (must be converted to a CLLocation for further functionality)
+    @NSManaged var date : NSDate
     @NSManaged var location : PFGeoPoint!
     ///The file of the photo representing the event (must be converted to UIImage for displaying)
     @NSManaged var eventPicFile : PFFile!
@@ -34,7 +35,7 @@ class Event: PFObject, PFSubclassing
     ///Queries for all events and returns them in the block callback as [Event]
     class func queryForEvents(completed:(events : [Event]!, error : NSError!) -> Void)
     {
-        let query = Event.query()
+        let query = Event.query()!
         query.includeKey("host")
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock { (events, error) -> Void in
@@ -44,7 +45,7 @@ class Event: PFObject, PFSubclassing
             }
             else
             {
-                completed(events: events as [Event], error: nil)
+                completed(events: events as! [Event], error: nil)
             }
         }
     }

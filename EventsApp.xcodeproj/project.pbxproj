@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F13734B1AD6C78300F015B6 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F13734A1AD6C78200F015B6 /* EventTableViewCell.swift */; };
-		3F4EF5F91AD56D8700B04E05 /* EventsTableViewCell in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EF5F81AD56D8700B04E05 /* EventsTableViewCell */; };
+		3F4EF5F91AD56D8700B04E05 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EF5F81AD56D8700B04E05 /* EventsViewController.swift */; };
 		3F624A9C1AD41E4600BADFC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F624A9B1AD41E4600BADFC6 /* LoginViewController.swift */; };
 		3F624A9E1AD4216C00BADFC6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F624A9D1AD4216C00BADFC6 /* RegisterViewController.swift */; };
 		3F8BE2CE1AD2CFAE0077F1B9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8BE2C81AD2CFAE0077F1B9 /* Bolts.framework */; };
@@ -28,6 +28,7 @@
 		3F8BE2E51AD2D05F0077F1B9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8BE2E41AD2D05F0077F1B9 /* SystemConfiguration.framework */; };
 		3F8BE2E71AD2D0690077F1B9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8BE2E61AD2D0690077F1B9 /* libz.dylib */; };
 		3F8BE2E91AD2D0770077F1B9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8BE2E81AD2D0770077F1B9 /* libsqlite3.dylib */; };
+		3FFEE3241AE0038500038A31 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFEE3231AE0038500038A31 /* CreateEventViewController.swift */; };
 		B19268D21A4072D80030A1E6 /* MMAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19268D11A4072D80030A1E6 /* MMAlertManager.swift */; };
 		B19268D41A40734B0030A1E6 /* MMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19268D31A40734B0030A1E6 /* MMExtensions.swift */; };
 		B19268D71A4073800030A1E6 /* MMkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19268D61A4073800030A1E6 /* MMkConstants.swift */; };
@@ -55,7 +56,7 @@
 
 /* Begin PBXFileReference section */
 		3F13734A1AD6C78200F015B6 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
-		3F4EF5F81AD56D8700B04E05 /* EventsTableViewCell */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EventsTableViewCell; sourceTree = "<group>"; };
+		3F4EF5F81AD56D8700B04E05 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		3F624A9B1AD41E4600BADFC6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F624A9D1AD4216C00BADFC6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3F8BE2C81AD2CFAE0077F1B9 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Downloads/parse-library-1.7.1/Bolts.framework"; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		3F8BE2E41AD2D05F0077F1B9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3F8BE2E61AD2D0690077F1B9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3F8BE2E81AD2D0770077F1B9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		3FFEE3231AE0038500038A31 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		B19268D11A4072D80030A1E6 /* MMAlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMAlertManager.swift; sourceTree = "<group>"; };
 		B19268D31A40734B0030A1E6 /* MMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMExtensions.swift; sourceTree = "<group>"; };
 		B19268D61A4073800030A1E6 /* MMkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMkConstants.swift; sourceTree = "<group>"; };
@@ -203,8 +205,9 @@
 				B19268E21A4075990030A1E6 /* Model Data */,
 				B19268D51A4073670030A1E6 /* Utilities */,
 				B19673F01A407035007022AD /* Main.storyboard */,
+				3FFEE3231AE0038500038A31 /* CreateEventViewController.swift */,
 				3F13734A1AD6C78200F015B6 /* EventTableViewCell.swift */,
-				3F4EF5F81AD56D8700B04E05 /* EventsTableViewCell */,
+				3F4EF5F81AD56D8700B04E05 /* EventsViewController.swift */,
 				3F624A9D1AD4216C00BADFC6 /* RegisterViewController.swift */,
 				3F624A9B1AD41E4600BADFC6 /* LoginViewController.swift */,
 				B19673F31A407035007022AD /* Images.xcassets */,
@@ -342,10 +345,11 @@
 				B19268DF1A4074250030A1E6 /* Photo.swift in Sources */,
 				3F624A9E1AD4216C00BADFC6 /* RegisterViewController.swift in Sources */,
 				B19268E11A4074440030A1E6 /* UniversalProfile.swift in Sources */,
+				3FFEE3241AE0038500038A31 /* CreateEventViewController.swift in Sources */,
 				B19268D21A4072D80030A1E6 /* MMAlertManager.swift in Sources */,
 				3F13734B1AD6C78300F015B6 /* EventTableViewCell.swift in Sources */,
 				B19268DB1A4073D10030A1E6 /* Profile.swift in Sources */,
-				3F4EF5F91AD56D8700B04E05 /* EventsTableViewCell in Sources */,
+				3F4EF5F91AD56D8700B04E05 /* EventsViewController.swift in Sources */,
 				B19673ED1A407035007022AD /* AppDelegate.swift in Sources */,
 				B19268D41A40734B0030A1E6 /* MMExtensions.swift in Sources */,
 				B19268D91A4073B50030A1E6 /* User.swift in Sources */,

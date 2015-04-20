@@ -30,7 +30,7 @@ class Photo: PFObject, PFSubclassing
     ///Creates a new user
     class func queryForPhotos(completed:(photos : [Photo]!, error : NSError!) -> Void)
     {
-        let query = Photo.query()
+        let query = Photo.query()!
         query.includeKey("event")
         query.includeKey("photographer")
         query.orderByDescending("createdAt")
@@ -41,7 +41,7 @@ class Photo: PFObject, PFSubclassing
             }
             else
             {
-                completed(photos: photos as [Photo], error: nil)
+                completed(photos: photos as! [Photo], error: nil)
             }
         }
     }

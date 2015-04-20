@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WqU-Xg-fXx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WqU-Xg-fXx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -154,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="-71" y="289"/>
         </scene>
-        <!--View Controller-->
+        <!--Events View Controller-->
         <scene sceneID="LIF-pX-NWm">
             <objects>
-                <viewController id="U5n-6f-nDL" sceneMemberID="viewController">
+                <viewController id="U5n-6f-nDL" customClass="EventsViewController" customModule="EventsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OeS-Zu-JB3"/>
                         <viewControllerLayoutGuide type="bottom" id="kqp-9R-dDJ"/>
@@ -238,14 +238,105 @@
                             <constraint firstItem="6s9-bM-O9b" firstAttribute="leading" secondItem="pgQ-Qg-M8D" secondAttribute="leadingMargin" constant="-16" id="noU-lP-KQw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4Yg-Hx-Kkp"/>
+                    <navigationItem key="navigationItem" id="4Yg-Hx-Kkp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cyL-Mr-3aY">
+                            <connections>
+                                <segue destination="dwz-Qh-oZI" kind="presentation" id="81M-Ta-Up8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="6s9-bM-O9b" id="hJR-x4-8sv"/>
                         <segue destination="yZT-wA-aFx" kind="presentation" identifier="EventsToRegisterSegue" id="M2d-N5-iXr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sng-yH-BJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="741" y="1071"/>
+        </scene>
+        <!--Create Event View Controller-->
+        <scene sceneID="qIm-z6-RKB">
+            <objects>
+                <viewController id="dwz-Qh-oZI" customClass="CreateEventViewController" customModule="EventsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E42-w3-3CY"/>
+                        <viewControllerLayoutGuide type="bottom" id="I6h-Ya-ebN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="00G-zh-Jek">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GvL-vg-qO0">
+                                <rect key="frame" x="215" y="234" width="170" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="Qza-o7-1Tw"/>
+                                    <constraint firstAttribute="height" constant="30" id="bKp-0B-UV8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="details" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XGt-VH-mdV">
+                                <rect key="frame" x="215" y="285" width="170" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="LRq-bp-miL"/>
+                                    <constraint firstAttribute="height" constant="30" id="VA7-ZL-AA8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="me1-1O-9tg">
+                                <rect key="frame" x="215" y="336" width="170" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="YSf-IW-wvB"/>
+                                    <constraint firstAttribute="height" constant="30" id="kw4-Qp-Mpj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="P91-rt-AfJ">
+                                <rect key="frame" x="0.0" y="438" width="600" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="eV0-TH-cSg"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="450973355.17737001">
+                                    <!--2015-04-17 14:22:35 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqm-gH-j12">
+                                <rect key="frame" x="215" y="183" width="170" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Select Event Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSelectPhotoButtonTapped:" destination="dwz-Qh-oZI" eventType="touchUpInside" id="rRg-WI-Z5c"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GvL-vg-qO0" firstAttribute="centerX" secondItem="XGt-VH-mdV" secondAttribute="centerX" id="9cR-il-Ldy"/>
+                            <constraint firstItem="XGt-VH-mdV" firstAttribute="top" secondItem="GvL-vg-qO0" secondAttribute="bottom" constant="21" id="9fS-lA-k9z"/>
+                            <constraint firstItem="GvL-vg-qO0" firstAttribute="top" secondItem="Mqm-gH-j12" secondAttribute="bottom" constant="21" id="IIk-5b-UBt"/>
+                            <constraint firstItem="P91-rt-AfJ" firstAttribute="leading" secondItem="00G-zh-Jek" secondAttribute="leadingMargin" constant="-16" id="Isz-KR-UNQ"/>
+                            <constraint firstAttribute="centerX" secondItem="Mqm-gH-j12" secondAttribute="centerX" id="KFL-6Y-qnj"/>
+                            <constraint firstItem="me1-1O-9tg" firstAttribute="centerX" secondItem="XGt-VH-mdV" secondAttribute="centerX" id="OYO-g0-1dQ"/>
+                            <constraint firstItem="me1-1O-9tg" firstAttribute="top" secondItem="XGt-VH-mdV" secondAttribute="bottom" constant="21" id="Td0-t8-kcE"/>
+                            <constraint firstAttribute="centerY" secondItem="XGt-VH-mdV" secondAttribute="centerY" id="YoG-no-mVQ"/>
+                            <constraint firstAttribute="centerX" secondItem="XGt-VH-mdV" secondAttribute="centerX" id="aZQ-if-irg"/>
+                            <constraint firstItem="I6h-Ya-ebN" firstAttribute="top" secondItem="P91-rt-AfJ" secondAttribute="bottom" id="i3Q-Y6-XUT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P91-rt-AfJ" secondAttribute="trailing" constant="-16" id="mBi-OF-cyL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailsTextField" destination="00G-zh-Jek" id="00a-4D-vJ4"/>
+                        <outlet property="locationTextField" destination="me1-1O-9tg" id="FxT-f2-FOm"/>
+                        <outlet property="titleTextField" destination="GvL-vg-qO0" id="scB-Ze-PCb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9P8-mn-dv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1479" y="1071"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0D9-iF-pMO">

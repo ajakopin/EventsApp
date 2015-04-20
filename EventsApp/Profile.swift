@@ -50,8 +50,8 @@ class Profile: PFObject, PFSubclassing
     ///Queries for the profile of the current user, and sets the kProfile singleton
     class func queryForCurrentUsersProfile(completed:(profile : Profile!, error : NSError!) -> Void)
     {
-        let query = Profile.query()
-        query.whereKey("user", equalTo: PFUser.currentUser())
+        let query = Profile.query()!
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
         query.includeKey("user")
         query.getFirstObjectInBackgroundWithBlock { (theProfile, error) -> Void in
             if error != nil
@@ -60,8 +60,8 @@ class Profile: PFObject, PFSubclassing
             }
             else
             {
-                UniversalProfile.sharedInstance.profile = theProfile as Profile!
-                completed(profile: theProfile as Profile!, error: nil)
+                UniversalProfile.sharedInstance.profile = theProfile as! Profile!
+                completed(profile: theProfile as! Profile!, error: nil)
             }
         }
     }
