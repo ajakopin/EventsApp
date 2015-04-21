@@ -16,6 +16,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     
     let imagePicker = UIImagePickerController()
     var selectedImage = UIImage?()
+    var location = CLLocation?()
     
     
     override func viewDidLoad() {
@@ -31,10 +32,35 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
+    func createNewEvent()
+    {
+        let newEvent = Event()
+        
+    }
+    
+    
+    func geocodeLocationWithBlock(located : (succeeded : Bool, error : NSError!) -> Void)
+    {
+        var geocode = CLGeocoder()
+        geocode.geocodeAddressString(locationTextField.text, completionHandler: { (placemarks, error) -> Void in
+            if error != nil
+            {
+                showAlertWithError(error, self)
+            }
+            else
+            {
+                let locations : [CLPlacemark] = placemarks as! [CLPlacemark]
+                self.location = locations.first?.location
+                located(succeeded: true, error: nil)
+            }
+            
+        })
+    }
+    
     @IBAction func onDoneButtonTapped(sender: UIBarButtonItem) {
         if titleTextField.text == "" || detailsTextField.text == "" || locationTextField.text == "" || selectedImage == nil
         {
-            
+            showAlert("Please fill out all required fields", nil, self)
         }
     }
     

@@ -21,7 +21,10 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         else
         {
-            setEventData()
+            Profile.queryForCurrentUsersProfile({ (profile, error) -> Void in
+                self.setEventData()
+            })
+            
         }
     }
     

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D539AB4D-A760-4D2D-A966-DE3669B178FE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EventsApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>192E6696BB6E2FE05CDAFEDA92C952926C047FA1</key>
+		<string>https://github.com/ajakopin/EventsApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>EventsApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>192E6696BB6E2FE05CDAFEDA92C952926C047FA1</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ajakopin/EventsApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>192E6696BB6E2FE05CDAFEDA92C952926C047FA1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>192E6696BB6E2FE05CDAFEDA92C952926C047FA1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>EventsApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
