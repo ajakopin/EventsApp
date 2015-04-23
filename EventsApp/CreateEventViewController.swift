@@ -34,8 +34,13 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     
     func createNewEvent()
     {
-        let newEvent = Event()
-        
+        let newEvent = Event?()
+        newEvent!.host = kProfile
+        newEvent!.details = detailsTextField.text
+        newEvent!.title = titleTextField.text
+        newEvent!.eventPicFile = PFFile(data: UIImagePNGRepresentation(selectedImage))
+        newEvent!.location = PFGeoPoint(location: location)
+        newEvent!.saveInBackgroundWithBlock(nil)
     }
     
     
@@ -61,6 +66,12 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
         if titleTextField.text == "" || detailsTextField.text == "" || locationTextField.text == "" || selectedImage == nil
         {
             showAlert("Please fill out all required fields", nil, self)
+        }
+        else
+        {
+            dismissViewControllerAnimated(true, completion: { () -> Void in
+                self.createNewEvent()
+            })
         }
     }
     

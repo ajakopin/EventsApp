@@ -15,7 +15,7 @@ class Photo: PFObject, PFSubclassing
         self.registerSubclass()
     }
 
-    class func parseClassName() -> String!
+    class func parseClassName() -> String
     {
         return "Photo"
     }

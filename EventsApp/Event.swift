@@ -15,22 +15,22 @@ class Event: PFObject, PFSubclassing
         self.registerSubclass()
     }
 
-    class func parseClassName() -> String!
+    class func parseClassName() -> String
     {
         return "Event"
     }
 
     ///The title of the event
-    @NSManaged var title : String!
+    @NSManaged var title : String
     ///Details about the event
-    @NSManaged var details : String!
+    @NSManaged var details : String
     ///The profile of the user who created the event
     @NSManaged var host : Profile!
     ///The Parse location object of where the event is taking place (must be converted to a CLLocation for further functionality)
     @NSManaged var date : NSDate
-    @NSManaged var location : PFGeoPoint!
+    @NSManaged var location : PFGeoPoint
     ///The file of the photo representing the event (must be converted to UIImage for displaying)
-    @NSManaged var eventPicFile : PFFile!
+    @NSManaged var eventPicFile : PFFile
 
     ///Queries for all events and returns them in the block callback as [Event]
     class func queryForEvents(completed:(events : [Event]!, error : NSError!) -> Void)
